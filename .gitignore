@@ -14,3 +14,7 @@ bsnotifier.egg-info/
 .tox/
 .coverage
 .python-version
+.pytest_cache
+
+# Temporary files
+*.log
