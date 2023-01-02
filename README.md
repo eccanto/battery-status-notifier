@@ -6,6 +6,8 @@
 Command line application that shows a popup window when the battery is low. This Python script can be used to notify
 battery status in [i3wm](https://i3wm.org/) environments.
 
+![Notifier Popup Window](documentation/images/popup-window.png)
+
 # Table of contents
 
 * [Get started](#get-started)
@@ -190,3 +192,4 @@ cd -
 # Changelog
 
 - 1.0.0 - Initial version.
+- 1.0.1 - I3 support.
