@@ -4,3 +4,13 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+
+# Build
+build/
+dist/
+bsnotifier.egg-info/
+
+# Test
+.tox/
+.coverage
+.python-version
