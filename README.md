@@ -60,14 +60,23 @@ By default the application will check the battery status every `1:30 minutes`, i
 
 ## How to use it with i3
 
-Auto start the application in your i3 config file:
+Auto start the notifier application in i3:
 
-```bash
-# ~/.config/i3/config
-...
-exec --no-startup-id bsnotifier
-...
-```
+1. Linking the application executable to make it accessible to other users.
+
+    ```bash
+    BSNOTIFIER_PATH="$(which bsnotifier)"
+    sudo ln -s "${BSNOTIFIER_PATH}" /usr/bin/bsnotifier
+    ```
+
+2. Edit i3 config file.
+
+    ```bash
+    # ~/.config/i3/config
+    ...
+    exec --no-startup-id bsnotifier -o "$(mktemp)"
+    ...
+    ```
 
 ## Options
 
