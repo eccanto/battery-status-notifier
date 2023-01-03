@@ -189,9 +189,7 @@ tox -e code_checkers
 ### Run manually
 
 ```bash
-cd data_collectors
 bash scripts/code_checkers.sh
-cd -
 ```
 
 # License
