@@ -200,3 +200,4 @@ bash scripts/code_checkers.sh
 
 - 1.0.0 - Initial version.
 - 1.0.1 - I3 support.
+- 1.0.2 - Close the popup window when connecting the battery, and update the information in real time.

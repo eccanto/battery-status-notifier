@@ -49,7 +49,9 @@ def show_popup() -> None:
             PySimpleGUI.Image(
                 data=image_file_to_bytes(CURRENT_DIRECTORY.joinpath('media/images/low-battery.ico'), (120, 60))
             ),
-            PySimpleGUI.Text(f'{int(psutil.sensors_battery().percent)}%', font=('any', 12, 'bold'), pad=(14, 14)),
+            PySimpleGUI.Text(
+                f'{int(psutil.sensors_battery().percent)}%', font=('any', 12, 'bold'), pad=(14, 14), key='-text-'
+            ),
         ],
         [
             PySimpleGUI.Button('Ok', button_color='white on green', key='-close-', pad=(20, 20)),
@@ -81,12 +83,18 @@ def show_popup() -> None:
         font='any 12',
         background_color='black',
         finalize=True,
+        location=(0, 0),
     )
 
     while True:
-        button, _ = window.read()
+        button, _ = window.read(timeout=4000)
         if button == '-close-' or button is None:
             break
+
+        if psutil.sensors_battery().power_plugged:
+            break
+
+        window['-text-'].update(f'{int(psutil.sensors_battery().percent)}%')
 
     window.close()
 
